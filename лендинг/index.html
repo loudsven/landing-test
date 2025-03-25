@@ -8,6 +8,9 @@
 
         <link href="bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="promo-form.css" />
+
+        <script defer src="../simple_timer.js"></script>
 
         <!-- INTH_SNIPPET_TOP -->
     </head>
@@ -852,12 +855,95 @@
                             ceny trwa do końca dnia
                             <strong id="date">31-3-2024</strong>.
                         </p>
-
-                        <a class="link-big landing-url" href="www.google.com"
-                            >Aby skorzystać z bioaktywatora keratynowego w
-                            PROMOCJI oraz ekstremalnie wydłużyć i zagęścić
-                            rzęsy, kliknij tutaj &gt;&gt;
-                        </a>
+                        <form class="promo-form" action="">
+                            <img
+                                src="../product.png"
+                                alt="product"
+                                width="150"
+                                height="300"
+                            />
+                            <h2 class="promo-form__title">Discount ends in:</h2>
+                            <div class="promo-form__timer simple_timer">
+                                <div
+                                    class="promo-form__time-unit promo-form__hours"
+                                >
+                                    <div class="promo-form__digits hours">
+                                        00
+                                    </div>
+                                    <div class="promo-form__digits-label">
+                                        Hours
+                                    </div>
+                                </div>
+                                <div
+                                    class="promo-form__time-unit promo-form__minutes"
+                                >
+                                    <div class="promo-form__digits minutes">
+                                        00
+                                    </div>
+                                    <div class="promo-form__digits-label">
+                                        Minutes
+                                    </div>
+                                </div>
+                                <div
+                                    class="promo-form__time-unit promo-form__seconds"
+                                >
+                                    <div class="promo-form__digits seconds">
+                                        00
+                                    </div>
+                                    <div class="promo-form__digits-label">
+                                        Seconds
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo-form__prices">
+                                <div class="promo-form__price">
+                                    <div class="promo-form__price-label">
+                                        Old price:
+                                    </div>
+                                    <div
+                                        class="promo-form__price-value promo-form__price-value--old"
+                                    >
+                                        105€
+                                    </div>
+                                </div>
+                                <div class="promo-form__price">
+                                    <div class="promo-form__price-label">
+                                        New price:
+                                    </div>
+                                    <div class="promo-form__price-value">
+                                        59€
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo-form__field">
+                                <label class="promo-form__field-label"
+                                    >Name</label
+                                >
+                                <input
+                                    type="text"
+                                    class="promo-form__field-input"
+                                />
+                            </div>
+                            <div class="promo-form__field">
+                                <label class="promo-form__field-label"
+                                    >Phone number</label
+                                >
+                                <input
+                                    type="text"
+                                    class="promo-form__field-input"
+                                />
+                            </div>
+                            <button
+                                class="promo-form__submit-button"
+                                type="submit"
+                            >
+                                Order
+                            </button>
+                            <span class="promo-form__info"
+                                >You pay for the order only after receiving
+                                it</span
+                            >
+                        </form>
                         <div class="autor d-flex mt-4 mb-4 align-items-center">
                             <img
                                 class="img-fluid"
@@ -1219,13 +1305,97 @@
                                     <p>Strona &lt; 1/19 &gt;</p>
                                 </div>
                             </div>
-                            <a
-                                class="landing-url link-big"
-                                href="www.google.com"
-                                >Aby skorzystać z bioaktywatora keratynowego w
-                                PROMOCJI oraz ekstremalnie wydłużyć i zagęścić
-                                rzęsy, kliknij tutaj &gt;&gt;
-                            </a>
+                            <form class="promo-form" action="">
+                                <img
+                                    src="../product.png"
+                                    alt="product"
+                                    width="150"
+                                    height="300"
+                                />
+                                <h2 class="promo-form__title">
+                                    Discount ends in:
+                                </h2>
+                                <div class="promo-form__timer simple_timer">
+                                    <div
+                                        class="promo-form__time-unit promo-form__hours"
+                                    >
+                                        <div class="promo-form__digits hours">
+                                            00
+                                        </div>
+                                        <div class="promo-form__digits-label">
+                                            Hours
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="promo-form__time-unit promo-form__minutes"
+                                    >
+                                        <div class="promo-form__digits minutes">
+                                            00
+                                        </div>
+                                        <div class="promo-form__digits-label">
+                                            Minutes
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="promo-form__time-unit promo-form__seconds"
+                                    >
+                                        <div class="promo-form__digits seconds">
+                                            00
+                                        </div>
+                                        <div class="promo-form__digits-label">
+                                            Seconds
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="promo-form__prices">
+                                    <div class="promo-form__price">
+                                        <div class="promo-form__price-label">
+                                            Old price:
+                                        </div>
+                                        <div
+                                            class="promo-form__price-value promo-form__price-value--old"
+                                        >
+                                            105€
+                                        </div>
+                                    </div>
+                                    <div class="promo-form__price">
+                                        <div class="promo-form__price-label">
+                                            New price:
+                                        </div>
+                                        <div class="promo-form__price-value">
+                                            59€
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="promo-form__field">
+                                    <label class="promo-form__field-label"
+                                        >Name</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="promo-form__field-input"
+                                    />
+                                </div>
+                                <div class="promo-form__field">
+                                    <label class="promo-form__field-label"
+                                        >Phone number</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="promo-form__field-input"
+                                    />
+                                </div>
+                                <button
+                                    class="promo-form__submit-button"
+                                    type="submit"
+                                >
+                                    Order
+                                </button>
+                                <span class="promo-form__info"
+                                    >You pay for the order only after receiving
+                                    it</span
+                                >
+                            </form>
                         </div>
                     </article>
                     <aside class="col-lg-4 sidebar mb-5 mb-md-0 pb-4 pb-md-0">
