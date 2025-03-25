@@ -51,8 +51,6 @@ function start_timer(className, minutes = 0) {
                 1000,
         );
     let elements = document.getElementsByClassName(className);
-    console.log(elements);
-
     write_timer(elements, time);
     const timerInterval = setInterval(() => {
         write_timer(elements, time);

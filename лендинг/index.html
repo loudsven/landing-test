@@ -11,6 +11,17 @@
         <link rel="stylesheet" href="promo-form.css" />
 
         <script defer src="../simple_timer.js"></script>
+        <script defer src="promo-form.js"></script>
+        <script defer src="../scroll_to_form.js" form_id="promo_form"></script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/date-fns/cdn.min.js"
+        ></script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/date-fns/locale/pl/cdn.min.js"
+        ></script>
+        <script defer src="../dtime_nums.js"></script>
 
         <!-- INTH_SNIPPET_TOP -->
     </head>
@@ -90,65 +101,47 @@
                     <div id="navbar-collapse" class="navbar-collapse collapse">
                         <ul class="navbar-nav justify-content-center flex-wrap">
                             <li class="nav-item current-box">
-                                <a
-                                    class="landing-url current nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url current nav-link" href="#"
                                     >Styl</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Pielęgnacja</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Makijaż</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Psychologia</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Zdrowie</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Kuchnia</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Seriale</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Ale plota!</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    class="landing-url nav-link"
-                                    href="www.google.com"
+                                <a class="landing-url nav-link" href="#"
                                     >Forum</a
                                 >
                             </li>
@@ -181,10 +174,7 @@
                                 Ten artykuł przeczytasz w 3 minuty
                             </div>
                             <div class="social d-flex align-items-center">
-                                <a
-                                    class="landing-url social__icon"
-                                    href="www.google.com"
-                                >
+                                <a class="landing-url social__icon" href="#">
                                     <svg
                                         width="28"
                                         height="28"
@@ -209,10 +199,7 @@
                                         </defs>
                                     </svg>
                                 </a>
-                                <a
-                                    class="landing-url social__icon"
-                                    href="www.google.com"
-                                >
+                                <a class="landing-url social__icon" href="#">
                                     <svg
                                         width="28"
                                         height="28"
@@ -297,10 +284,7 @@
                                         </defs>
                                     </svg>
                                 </a>
-                                <a
-                                    class="landing-url social__icon"
-                                    href="www.google.com"
-                                >
+                                <a class="landing-url social__icon" href="#">
                                     <svg
                                         width="28"
                                         height="28"
@@ -327,7 +311,7 @@
                                 </a>
                                 <a
                                     class="landing-url social__icon print d-flex align-items-center"
-                                    href="www.google.com"
+                                    href="#"
                                 >
                                     <svg
                                         width="16"
@@ -855,7 +839,12 @@
                             ceny trwa do końca dnia
                             <strong id="date">31-3-2024</strong>.
                         </p>
-                        <form class="promo-form" action="">
+                        <form
+                            id="promo_form"
+                            class="promo-form"
+                            method="POST"
+                            action="../api.php"
+                        >
                             <img
                                 src="../product.png"
                                 alt="product"
@@ -922,16 +911,24 @@
                                     >Nazwa</label
                                 >
                                 <input
+                                    maxlength="32"
+                                    required
                                     type="text"
                                     class="promo-form__field-input"
                                 />
                             </div>
                             <div class="promo-form__field">
-                                <label class="promo-form__field-label"
+                                <label
+                                    class="promo-form__field-label"
+                                    for="promo-phone"
                                     >Numer telefonu</label
                                 >
                                 <input
-                                    type="text"
+                                    id="promo-phone"
+                                    maxlength="32"
+                                    pattern="[\d\+\(\)\-]*"
+                                    type="tel"
+                                    required
                                     class="promo-form__field-input"
                                 />
                             </div>
@@ -968,16 +965,17 @@
                                 >
                             </h3>
                             <div class="comments-list mt-5">
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-25T12:00:00"
+                                >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="user" />
                                     </div>
                                     <div class="comment__box">
                                         <p class="comment__author">
                                             Eliza
-                                            <span class="comment__date"
-                                                >15 minut temu</span
-                                            >
+                                            <span class="comment__date"></span>
                                         </p>
                                         <p class="comment__content">
                                             a czy mozna uzywac ten produkt jak
@@ -1009,7 +1007,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-25T16:26:00"
+                                >
                                     <div class="comment__img">
                                         <img
                                             src="icon__user-2.png"
@@ -1036,7 +1037,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-25T16:16:00"
+                                >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="user" />
                                     </div>
@@ -1064,7 +1068,10 @@
                                         />
                                     </div>
                                 </div>
-                                <div class="comment d-flex response">
+                                <div
+                                    class="comment d-flex response"
+                                    data-time="2025-03-25T15:47:00"
+                                >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="user" />
                                     </div>
@@ -1107,16 +1114,17 @@
                                             Kurację można zamówić na stronie, do
                                             której link podajemy na końcu
                                             artykułu 😊 Jak nie możesz znaleźć,
-                                            <a
-                                                class="landing-url"
-                                                href="www.google.com"
+                                            <a class="landing-url" href="#"
                                                 >daję Ci link również tutaj,
                                                 klik &gt;&gt;</a
                                             >
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-25T16:15:00"
+                                >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="user" />
                                     </div>
@@ -1134,7 +1142,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-25T16:39:00"
+                                >
                                     <div class="comment__img">
                                         <img
                                             src="icon__user-5.png"
@@ -1159,6 +1170,7 @@
                                 </div>
                                 <div
                                     class="comment response response d-flex ml-4"
+                                    data-time="2025-03-25T16:39:00"
                                 >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="autor" />
@@ -1183,7 +1195,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment response-2 d-flex">
+                                <div
+                                    class="comment response-2 d-flex"
+                                    data-time="2025-03-24T16:45:00"
+                                >
                                     <div class="comment__img">
                                         <img
                                             src="icon__user-5.png"
@@ -1205,7 +1220,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-24T16:45:00"
+                                >
                                     <div class="comment__img">
                                         <img
                                             src="icon__user-3.png"
@@ -1231,7 +1249,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-23T16:45:00"
+                                >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="user" />
                                     </div>
@@ -1255,7 +1276,10 @@
                                         />
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-23T16:45:00"
+                                >
                                     <div class="comment__img">
                                         <img
                                             src="icon__user-4.png"
@@ -1285,7 +1309,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="comment d-flex">
+                                <div
+                                    class="comment d-flex"
+                                    data-time="2025-03-23T16:45:00"
+                                >
                                     <div class="comment__img">
                                         <img src="icon__user.png" alt="user" />
                                     </div>
@@ -1307,97 +1334,6 @@
                                     <p>Strona &lt; 1/19 &gt;</p>
                                 </div>
                             </div>
-                            <form class="promo-form" action="">
-                                <img
-                                    src="../product.png"
-                                    alt="product"
-                                    width="150"
-                                    height="300"
-                                />
-                                <h2 class="promo-form__title">
-                                    Discount ends in:
-                                </h2>
-                                <div class="promo-form__timer simple_timer">
-                                    <div
-                                        class="promo-form__time-unit promo-form__hours"
-                                    >
-                                        <div class="promo-form__digits hours">
-                                            00
-                                        </div>
-                                        <div class="promo-form__digits-label">
-                                            Hours
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="promo-form__time-unit promo-form__minutes"
-                                    >
-                                        <div class="promo-form__digits minutes">
-                                            00
-                                        </div>
-                                        <div class="promo-form__digits-label">
-                                            Minutes
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="promo-form__time-unit promo-form__seconds"
-                                    >
-                                        <div class="promo-form__digits seconds">
-                                            00
-                                        </div>
-                                        <div class="promo-form__digits-label">
-                                            Seconds
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="promo-form__prices">
-                                    <div class="promo-form__price">
-                                        <div class="promo-form__price-label">
-                                            Old price:
-                                        </div>
-                                        <div
-                                            class="promo-form__price-value promo-form__price-value--old"
-                                        >
-                                            105€
-                                        </div>
-                                    </div>
-                                    <div class="promo-form__price">
-                                        <div class="promo-form__price-label">
-                                            New price:
-                                        </div>
-                                        <div class="promo-form__price-value">
-                                            59€
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="promo-form__field">
-                                    <label class="promo-form__field-label"
-                                        >Name</label
-                                    >
-                                    <input
-                                        type="text"
-                                        class="promo-form__field-input"
-                                    />
-                                </div>
-                                <div class="promo-form__field">
-                                    <label class="promo-form__field-label"
-                                        >Phone number</label
-                                    >
-                                    <input
-                                        type="text"
-                                        class="promo-form__field-input"
-                                    />
-                                </div>
-                                <button
-                                    class="promo-form__submit-button"
-                                    type="submit"
-                                >
-                                    Order
-                                </button>
-                                <span class="promo-form__info"
-                                    >You pay for the order only after receiving
-                                    it</span
-                                >
-                            </form>
                         </div>
                     </article>
                     <aside class="col-lg-4 sidebar mb-5 mb-md-0 pb-4 pb-md-0">
@@ -1411,199 +1347,14 @@
                                 >WARSZAWA WEATHER</a
                             >
                         </div>
-                        <div class="articles">
-                            <h3 class="title-with-bg mb-3">
-                                Polecane artykuły
-                            </h3>
-                            <a
-                                class="landing-url articles__item d-flex"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_1.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Farbujesz włosy? Sprawdź, jak ich nie
-                                    zniszczyć
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_2.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Ten zielony napój to eliksir młodości
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_3.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Higiena jamy ustnej – jak myć zęby i być
-                                    eko?
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_4.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Hit na popękane pięty. Kosztuje tylko 10 zł!
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_5.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Jak oszczędzić na rachunkach za prąd i wodę?
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_6.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Wyrzucasz skórę arbuza? Już więcej tego nie
-                                    zrobisz…
-                                </p>
-                            </a>
-                            <h3 class="title-with-bg mt-3 mb-3">
-                                Popularne dziś:
-                            </h3>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_7.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    5 sztuczek, dzięki którym szybciej
-                                    sprzątniesz dom
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_8.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Dieta owocowa – czy warto?
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_9.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Najmodniejsze sukienki tego sezonu
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_10.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    3 sposoby, by zmotywować się do ćwiczeń
-                                </p>
-                            </a>
-                            <a
-                                class="articles__item d-flex landing-url"
-                                href="www.google.com"
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src="IMG_article_11.png"
-                                    alt="artykuł"
-                                />
-                                <p class="articles__title">
-                                    Objawy niedoboru kwasu foliowego
-                                </p>
-                            </a>
-                            <div class="promo-box">
-                                <h2
-                                    class="promo-box__title text-uppercase text-center"
-                                >
-                                    MEGA PROMOCJA!
-                                </h2>
-                                <img
-                                    class="img-fluid w-100"
-                                    src="IMG_banner.jpg"
-                                    alt="getshape"
-                                />
-                                <div class="d-flex justify-content-center">
-                                    <a
-                                        class="btn btn-primary mt-3 mb-3 d-flex landing-url"
-                                        href="www.google.com"
-                                    >
-                                        Sprawdź
-                                        <svg
-                                            width="24"
-                                            height="24"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M11.625 0C5.20312 0 0 5.20312 0 11.625C0 18.0469 5.20312 23.25 11.625 23.25C18.0469 23.25 23.25 18.0469 23.25 11.625C23.25 5.20312 18.0469 0 11.625 0ZM10.2656 6.75C9.79688 6.32812 9.79688 5.57812 10.2188 5.15625L10.7344 4.64062C11.2031 4.17188 11.9062 4.17188 12.3281 4.64062L18.5625 10.875C18.9844 11.2969 18.9844 12 18.5625 12.4219L12.3281 18.6562C11.9062 19.0781 11.2031 19.0781 10.7344 18.6562L10.2188 18.1406C9.79688 17.7188 9.79688 16.9688 10.2656 16.5469L13.7812 13.125H5.25C4.59375 13.125 4.125 12.6562 4.125 12V11.25C4.125 10.6406 4.59375 10.125 5.25 10.125H13.7812L10.2656 6.75Z"
-                                                fill="white"
-                                            ></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </aside>
                 </div>
             </div>
         </main>
         <footer class="container footer text-center">
-            <p class="footer__copy">Copyright © 2022.</p>
+            <p class="footer__copy">
+                Copyright © <span class="footer__year"></span>.
+            </p>
         </footer>
 
         <div
