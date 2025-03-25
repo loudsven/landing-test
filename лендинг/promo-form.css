@@ -12,6 +12,7 @@
 
 .promo-form__title {
     font-size: 1.7rem;
+    font-weight: normal;
     color: var(--secodary-color);
 }
 
@@ -22,31 +23,28 @@
 }
 
 .promo-form__timer > :nth-child(n) {
-    flex: 1 0 calc(33% - 1rem);
+    flex: 1 0 calc(33% - 0.5rem);
 }
 
 .promo-form__minutes {
     position: relative;
 }
 
-.promo-form__minutes::before {
-    content: ':';
+.promo-form__minutes::before,
+.promo-form__minutes::after {
     position: absolute;
-    font-size: 24px;
-
     top: 50%;
-    left: -0.8rem;
+    font-size: 2rem;
     transform: translateY(-50%);
+    content: ':';
+}
+
+.promo-form__minutes::before {
+    left: -0.8rem;
 }
 
 .promo-form__minutes::after {
-    content: ':';
-    position: absolute;
-    font-size: 24px;
-
-    top: 50%;
     right: -0.8rem;
-    transform: translateY(-50%);
 }
 
 .promo-form__digits {
@@ -108,4 +106,6 @@
     border-radius: 0.3rem;
     font-size: 1rem;
     padding: 0.7rem 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
 }
